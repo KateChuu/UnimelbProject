@@ -1,0 +1,157 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>770</x><y>33</y><w>231</w><h>176</h></coordinates><panel_attributes>/Entity/
+--
+- x: int
+- y: int
+- type: String
+--
++ getX(): int
++ getY(): int
++ setX(x): void
++ setY(y): void
++ setType(type): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>374</x><y>275</y><w>385</w><h>319</h></coordinates><panel_attributes>/SpaceEntity/
+--
+- previousX: int
+- previousY: int
+- moveX: int
+- moveY: int
+--
++ getPreviousX(): int 
++ getPreviousY(): int
++ setPreviousX(x): void
++ setPreviousY(y): void
++ getMoveX(): int
++ getMoveY(): int
++ setMoveX(moveX): void
++ setMoveY(moveY): void
++ move(keyboard, marsController): boolean
++ printCommands(): void
++ whatsOnPosition(marsController): String
+/+ performAction(keyboard, nextStep, marsController): boolean/
+/+ checkMoveAvalidity(keyboard, marsController): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>924</x><y>286</y><w>231</w><h>154</h></coordinates><panel_attributes>Dog
+--
+- health: int
+--
++ getHealth(): int
++ addHealth(health): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>77</x><y>660</y><w>396</w><h>209</h></coordinates><panel_attributes>SpaceRover
+--
+--
++ checkMoveValidity(keyboard, marsController): void
++ performAction(keyboard, nextStep, marsController): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>891</x><y>638</y><w>418</w><h>231</h></coordinates><panel_attributes>MartianAnimal
+--
+- name: String
+- health: int
+- died: boolean
+- DAMAGE: int
+--
++ getHealth(): int
++ addHealth(health): void
++ getName(): String
++ getDied(): boolean
++ setDied(died): void
++ checkMoveValidity(keyboard, marsController): void
++ performAction(keyboard, nextStep, marsController): boolean
++ fight(dog): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>957</x><y>198</y><w>99</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;80</additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>198</y><w>143</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>242</x><y>583</y><w>165</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>583</y><w>33</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>583</y><w>319</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;270;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>121</x><y>1276</y><w>231</w><h>121</h></coordinates><panel_attributes>UnknownEntityException
+--
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>649</x><y>1276</y><w>231</w><h>121</h></coordinates><panel_attributes>InvalidLocationException
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>77</x><y>1232</y><w>836</w><h>275</h></coordinates><panel_attributes>exceptions
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>924</x><y>968</y><w>759</w><h>539</h></coordinates><panel_attributes>controllers
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>946</x><y>1012</y><w>385</w><h>429</h></coordinates><panel_attributes>MarsHabitatController
+--
+- marsHabitat: ArrayList&lt;char[]&gt;
+- quantityMap: HashMap&lt;Character, Integer&gt;
+- extraHabitability: int
+- spaceEntityList: ArrayList&lt;entities.SpaceEntity&gt;
+- dogList: ArrayList&lt;entities.Dog&gt;
+- SCORE_MAP: Map&lt;Character, Integer&gt;
+- NAME_MAP: Map&lt;Character, String&gt;
+--
++ getQuantityMap(): HashMap&lt;Character, Integer&gt;
++ resetQuantityMap(): void
++ getSpaceEntityList(): ArrayList&lt;entities.SpaceEntity&gt;
++ addSpaceEntityList(spaceEntity): void
++ removeSpaeEntityList(spaceEntity): void
++ getDogList(): ArrayList&lt;entities.Dog&gt;
++ addDogList(Dog): void
++ removeDogList(dog): void
++ getExtraHabitability(): int
++ addExtraHabitability(extraHabitability): void
++ modyfyCell(x, y, symbol): void
++ addMarsHabitat(row): void
++ getMarsHabitat(): ArrayList&lt;char[]&gt;
++ generateEntities(): void
++ countEntities(): void
++ displayHabitability(): boolean
++ calculateHabitability(): int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>1012</y><w>286</w><h>440</h></coordinates><panel_attributes>FileController
+--
+- filename: String
+- logname: String
+- DEFAULT_PATH: String
+- DEFAULT_LOG_PATH:String
+- SYMBOLS: Characters[]
+--
++ getFilename(): String
++ setFliename(filename): void
++ getLogname(): String
++ setLogname(logname): void
++ displayLayout(marsController): void
++ checkInvalidFile(marsController: void
++ checkUnknownEntity(marsController: void
++ saveFile(keyboard, marsController): void
++ saveHabitability(marsController): void
++ readHistoryLog(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1408</x><y>660</y><w>418</w><h>231</h></coordinates><panel_attributes>MarsHabitatApplication
+--
+--
++ main(args[]): void
+- displayMessage(): void
+- displayMainMenu(keyboard, fileController, marsController): void
+- printCommands(): void
+- selectEntity(marsController, type, keyboard, fileController ): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>858</y><w>770</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
+creates
+m1=1..*
+m2=1</panel_attributes><additional_attributes>10;10;80;30;680;140</additional_attributes></element><element><id>Relation</id><coordinates><x>781</x><y>858</y><w>209</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
+creates
+m1=1..*
+m2=1</panel_attributes><additional_attributes>10;10;170;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>858</y><w>77</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
+creates
+m1=0..*
+m2=0..1</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>429</y><w>286</w><h>605</h></coordinates><panel_attributes>lt=&lt;-
+creates
+m1=0..*
+m2=0..1</panel_attributes><additional_attributes>10;10;10;60;200;60;200;450;120;490;10;530</additional_attributes></element><element><id>UMLClass</id><coordinates><x>385</x><y>1276</y><w>231</w><h>121</h></coordinates><panel_attributes>InvalidFileException
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>781</x><y>429</y><w>187</w><h>253</h></coordinates><panel_attributes>lt=&lt;..
+feeds</panel_attributes><additional_attributes>150;10;10;210</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>66</x><y>0</y><w>1320</w><h>891</h></coordinates><panel_attributes>entities
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>484</x><y>660</y><w>396</w><h>209</h></coordinates><panel_attributes>SpaceRobot
+--
+- PLANT_OPTION_MAP: Map&lt;Integer, String&gt;
+- ANIMAL_OPTION_MAP: Map&lt;Integer, String&gt;
+--
++ checkMoveValidity(keyboard, marsController): void
++ performAction(keyboard, nextStep, marsController): boolean
++ subMenu(keyboard): char</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>429</y><w>66</w><h>231</h></coordinates><panel_attributes>lt=&lt;..
+fights</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>1056</x><y>858</y><w>55</w><h>176</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>858</y><w>550</w><h>176</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>480;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>187</x><y>858</y><w>902</w><h>176</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>800;140;170;10;10;11</additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>583</y><w>88</w><h>99</h></coordinates><panel_attributes>lt=&lt;..
+identifies</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>605</x><y>583</y><w>341</w><h>77</h></coordinates><panel_attributes>lt=&lt;..
+identifies</panel_attributes><additional_attributes>290;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1265</x><y>880</y><w>385</w><h>154</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>10;120;330;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1617</x><y>880</y><w>55</w><h>154</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>1078</y><w>88</w><h>44</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>10;20;60;20</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>1386</y><w>1056</w><h>99</h></coordinates><panel_attributes>lt=&lt;..
+catches</panel_attributes><additional_attributes>10;10;10;70;940;70;940;60</additional_attributes></element><element><id>Relation</id><coordinates><x>198</x><y>1386</y><w>1353</w><h>99</h></coordinates><panel_attributes>lt=&lt;..
+catches</panel_attributes><additional_attributes>10;10;10;70;1210;70;1210;60</additional_attributes></element><element><id>Relation</id><coordinates><x>737</x><y>880</y><w>1001</w><h>627</h></coordinates><panel_attributes>lt=&lt;..
+catches</panel_attributes><additional_attributes>10;470;10;550;890;550;890;10</additional_attributes></element><element><id>Relation</id><coordinates><x>627</x><y>209</y><w>825</w><h>473</h></coordinates><panel_attributes>lt=&lt;..
+shows</panel_attributes><additional_attributes>10;60;10;20;730;20;730;410</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>242</y><w>858</w><h>792</h></coordinates><panel_attributes>lt=&lt;..
+uses</panel_attributes><additional_attributes>760;700;760;20;10;20;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>0</x><y>242</y><w>704</w><h>1056</h></coordinates><panel_attributes>lt=&lt;..
+throws</panel_attributes><additional_attributes>620;940;460;870;10;640;10;10;400;10;400;30</additional_attributes></element><element><id>Relation</id><coordinates><x>154</x><y>858</y><w>550</w><h>440</h></coordinates><panel_attributes>lt=&lt;..
+throws</panel_attributes><additional_attributes>480;380;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>671</x><y>858</y><w>77</w><h>440</h></coordinates><panel_attributes>lt=&lt;..
+throws</panel_attributes><additional_attributes>10;380;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>671</x><y>858</y><w>308</w><h>440</h></coordinates><panel_attributes>lt=&lt;..
+throws</panel_attributes><additional_attributes>10;380;260;10</additional_attributes></element></diagram>
