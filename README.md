@@ -1,4 +1,8 @@
 # Projects of Programming and Software Development 
+The two projects are written in Java.
 
 ## ParkingLot
+The user first initialises the parking lot by specifying length and width, then parks one vehicle (car/bike/truck/motorbike) in the parking lot at a time. The information of the vehicles such as type and color etc. needs to be entered before parking. The type, region ID, entrance date, exit date, number of vehicles in the parking lot, movement of the vehicles and so on must follow certain rules or the user is asked to re-entering until they are valid. Fee and fine are calculated when a vehicle is about leaving. The former one is based on different type of a vehicle and the time it stays in the parking lot; the later one depands on the times of a vehicle hitting the walls, pillars or other vehicles in the parking lot.
+
 ## MarsHabitat
+There are robots, rovers, minerals, Earth animals, plants and Martian animals in the Mars habitat; each of them has neutral, positive or negative habitability scores. The goal for the user is to make Mars habitat livable - have as high habitability score as possible. The size of the Mars habitat is defined by reading a file or specified by command line. Next, the user manipulates robots, which plant, water, rear or feed plantations and animals, rovers, which collect and destroy minerals and Martian animals, which kill the plants and animals and fight with specific Earth animals. The habitability score changes accordingly. In the end, the status and habitability score of the Mars habitat can be saved in the layout file and log file incase the user wants to continue work on the same Mars habitat in the future. 
